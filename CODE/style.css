@@ -1,0 +1,200 @@
+@charset "UTF-8";
+@font-face {
+	font-family: 'Bahnschrift'; 
+	src: url(/fonts/Bahnschrift.ttf); 
+}
+@font-face {
+	font-family: 'RemboyRegular'; 
+	src: url(/fonts/RemboyRegular.ttf); 
+}
+
+@font-face {
+	font-family: 'Oldenglishtextmt'; 
+	src: url(/fonts/Oldenglishtextmt.ttf); 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* полоса прокрутки */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0000007d;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5b1010;
+}
+
+/* общие начтройки страниц */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    hyphens: auto;
+    max-width: 100vw;
+}
+
+p {
+    color: #ffffff;
+    padding: auto;
+    margin: auto;
+    font-family: "Bahnschrift", Light Condensed;
+    font-size: auto;
+    z-index: 20;
+}
+
+footer {
+    color: #ffffff;
+    background-color: #760919;
+    font-size: 14px;
+    height: 7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #760919;
+    font-family: "Oldenglishtextmt";
+    font-size: 60pt;
+    font-weight: 120;
+    margin-left: 20vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*печатающая машинка*/
+.wrapper {
+    display: grid;
+    place-items: center;
+}
+
+.typing-demo {
+    animation: typing 2s steps(22), blink-caret .75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: 'RemboyRegular';
+    font-size: 8vw;
+    position: absolute;
+    margin-bottom: 10%;
+    color: #ffffff;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 20ch;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #fffefc;
+    }
+}
+
+/*иконки в footer*/
+.social_madia {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.social_madia>img {
+    max-width: 2.5em;
+    max-height: 2.5em;
+}
+
+/*стили главной страницы*/
+.img_index {
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_index>img {
+    height: auto;
+    width: auto;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
+.article_red {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #7f0e0e67;
+    padding: 10vh 0vw 10vh 0vw;
+    white-space: pre-line;
+    font-size: large;
+    overflow: hidden;
+}
+
+.article_red>img {
+    max-width: 45vw;
+    max-height: 50vh;
+}
+
+
+.footer_black {
+    background-color: #0000005b;
+}
+
+/*стили страницы контакты*/
+section {
+    justify-content: center;
+    align-items: center;
+    margin-left: 20vw;
+    margin-bottom: 35vh;
+}
+
+section>p {
+    margin-left: 0%;
+}
+
+.contacts {
+    color: #ffffff;
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: 0.01fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    text-align: left;
+}
+
+.contacts>img {
+    height: 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+.vertical {
+    position: absolute;
+    height: 70vh;
+    width: 1.5px;
+    left: 85vw;
+    border: 1.5px solid #760919;
+    top: 0px;
+    overflow: hidden;
+}
+

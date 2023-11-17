@@ -1,0 +1,119 @@
+@charset "UTF-8";
+@font-face {
+	font-family: 'Bahnschrift'; 
+	src: url(/fonts/Bahnschrift.ttf); 
+}
+/* боковое меню */
+.nav {
+    width: auto;
+    max-width: 100%;
+    overflow-x: visible;
+    height: 45em;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    top: -300%;
+    right: 0;
+    transition: right 0.3s;
+    background: linear-gradient(45deg, transparent 30%, #760919 0);
+    z-index: 30;
+    margin-right: 4vw;
+    transition: .5s;
+}
+
+.nav>ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 15pt 30pt 30pt 40pt;
+    position: relative;
+}
+
+.nav>ul>li>a {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    font-family: "Bahnschrift";
+    font-stretch: semi-condensed;
+    font-size: auto;
+    color: #ffffff;
+    width: 100%;
+    text-decoration: none;
+    transition: color .5s ease, padding .5s ease;
+}
+
+.nav>ul>li>a:hover,
+.nav>ul>li>a:focus {
+    color: #7ce1bf;
+}
+
+/*Кнопка меню*/
+.nav-toggle {
+    position: fixed;
+    right: 0px;
+    padding: 3pt;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20pt;
+    line-height: 1;
+    z-index: 20;
+    top: 0;
+    margin-right: 4vw;
+}
+
+.nav-toggle:hover {
+    color:  #7ce1bf;
+}
+
+/*символ Unicode (TRIGRAM FOR HEAVEN)*/
+.nav-toggle:after {
+    content: '\2630';
+    text-decoration: none;
+}
+
+/*символ Unicode (MULTIPLICATION X)*/
+[id='nav-toggle']:checked~.nav>.nav-toggle:after {
+    content: '\2715';
+}
+
+/* анимация копки */
+[id='nav-toggle']:checked~.nav>.nav-toggle {
+    left: auto;
+    right: 2px;
+    top: 0em;
+}
+
+[id='nav-toggle']:checked~.nav {
+    top: 0;
+    overflow-y: auto;
+}
+
+/*анимация ссылок меню*/
+.nav>ul>li {
+    line-height: 2.5;
+    transform: translateY(-900%);
+    transition: transform .5s;
+    animation-iteration-count: 1;
+}
+
+[id='nav-toggle']:checked~.nav>ul>li {
+    transform: translateY(0);
+}
+
+.nav>ul>li:nth-child(4) {
+    transition: transform .5s .2s;
+}
+
+.nav>ul>li:nth-child(3) {
+    transition: transform .5s .4s;
+}
+
+.nav>ul>li:nth-child(2) {
+    transition: transform .5s .6s;
+}
+
+.nav>ul>li:nth-child(1) {
+    transition: transform .5s .8s;
+}
+
